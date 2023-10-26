@@ -14,6 +14,7 @@ namespace Fall2020_CSC403_Project {
     private FrmBattle() {
       InitializeComponent();
       player = Game.player;
+      //this.KeyPreview = true;//To enable key handling for the form
     }
 
     public void Setup() {
