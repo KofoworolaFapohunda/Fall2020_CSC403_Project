@@ -11,8 +11,9 @@ namespace Fall2020_CSC403_Project {
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
+        public Weapon weapon;
 
-    private DateTime timeBegin;
+        private DateTime timeBegin;
     private FrmBattle frmBattle;
 
     public FrmLevel() {
@@ -20,15 +21,16 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
-      const int PADDING = 7;
+      const int PADDING = 8;
       const int NUM_WALLS = 13;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
       enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+            weapon = new Weapon(CreatePosition(knife), CreateCollider(knife, PADDING));
 
-      bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
 
@@ -84,9 +86,15 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid)) {
         Fight(bossKoolaid);
       }
+            if (HitAWeapon(player))
+            {
+                knife.Visible = false;
 
-      // update player's picture box
-      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+
+            }
+
+            // update player's picture box
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
 
     private bool HitAWall(Character c) {
@@ -103,8 +111,17 @@ namespace Fall2020_CSC403_Project {
     private bool HitAChar(Character you, Character other) {
       return you.Collider.Intersects(other.Collider);
     }
+        private bool HitAWeapon(Character c)
+        {
+            bool hitAWeapon = false;
+            if (c.Collider.Intersects(weapon.Collider))
+            {
+                hitAWeapon = true;
+            }
+            return hitAWeapon;
+        }
 
-    private void Fight(Enemy enemy) {
+        private void Fight(Enemy enemy) {
       player.ResetMoveSpeed();
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy);
