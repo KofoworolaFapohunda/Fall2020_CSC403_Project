@@ -32,6 +32,9 @@ namespace Fall2020_CSC403_Project {
 
       // show health
       UpdateHealthBars();
+
+            // show experience
+      UpdateExpBars();
     }
 
     public void SetupForBossBattle() {
@@ -65,6 +68,14 @@ namespace Fall2020_CSC403_Project {
       lblPlayerHealthFull.Text = player.Health.ToString();
       lblEnemyHealthFull.Text = enemy.Health.ToString();
     }
+    private void UpdateExpBars() {
+      float playerExpPer = player.Experience / (float)player.maxExp;
+      const int MAX_EXPBAR_WIDTH = 200;
+      lblPlayerExpFull.Width = (int)(MAX_EXPBAR_WIDTH * playerExpPer);
+      lblPlayerExpFull.Text = player.Experience.ToString();
+    }
+
+
         public static bool Death = false;
         public static int KillEnemy = 0;
         private void btnAttack_Click(object sender, EventArgs e) {
@@ -73,10 +84,14 @@ namespace Fall2020_CSC403_Project {
             if (checkweapon)
             {
                 player.OnAttack(-8);
+                player.UpdateExp(1);
+                UpdateExpBars();
             }
             else
             {
                 player.OnAttack(-4);
+                player.UpdateExp(1);
+                UpdateExpBars();
             }
             if (enemy.Health > 0) {
                 attack_audio.Play();
@@ -89,6 +104,8 @@ namespace Fall2020_CSC403_Project {
       {
         instance = null;
         KillEnemy++;
+        player.UpdateExp(10);
+        UpdateExpBars();
         Death = true;
         Close();
                 if (KillEnemy == 3)
