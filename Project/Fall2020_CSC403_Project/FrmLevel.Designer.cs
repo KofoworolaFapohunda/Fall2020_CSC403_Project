@@ -47,6 +47,7 @@
             this.picWall11 = new System.Windows.Forms.PictureBox();
             this.knife = new System.Windows.Forms.PictureBox();
             this.vanish = new System.Windows.Forms.PictureBox();
+            this.heal0 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.knife)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vanish)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heal0)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -302,11 +304,11 @@
             this.knife.BackColor = System.Drawing.Color.Transparent;
             this.knife.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.knife;
             this.knife.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.knife.Location = new System.Drawing.Point(785, 242);
+            this.knife.Location = new System.Drawing.Point(782, 241);
             this.knife.Margin = new System.Windows.Forms.Padding(6);
             this.knife.Name = "knife";
             this.knife.Size = new System.Drawing.Size(78, 89);
-            this.knife.TabIndex = 0;
+            this.knife.TabIndex = 18;
             this.knife.TabStop = false;
             // 
             // vanish
@@ -315,8 +317,20 @@
             this.vanish.Margin = new System.Windows.Forms.Padding(4);
             this.vanish.Name = "vanish";
             this.vanish.Size = new System.Drawing.Size(0, 0);
-            this.vanish.TabIndex = 5;
+            this.vanish.TabIndex = 99;
             this.vanish.TabStop = false;
+            // 
+            // heal0
+            // 
+            this.heal0.BackColor = System.Drawing.Color.Transparent;
+            this.heal0.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.Potion;
+            this.heal0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.heal0.Location = new System.Drawing.Point(1473, 775);
+            this.heal0.Margin = new System.Windows.Forms.Padding(6);
+            this.heal0.Name = "heal0";
+            this.heal0.Size = new System.Drawing.Size(46, 66);
+            this.heal0.TabIndex = 19;
+            this.heal0.TabStop = false;
             // 
             // FrmLevel
             // 
@@ -344,6 +358,7 @@
             this.Controls.Add(this.picBossKoolAid);
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.knife);
+            this.Controls.Add(this.heal0);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLevel";
@@ -371,6 +386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.knife)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vanish)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heal0)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,6 +416,7 @@
     private System.Windows.Forms.PictureBox picWall11;
     private System.Windows.Forms.PictureBox knife;
     private System.Windows.Forms.PictureBox vanish;
+    private System.Windows.Forms.PictureBox heal0;
     }
 }
 

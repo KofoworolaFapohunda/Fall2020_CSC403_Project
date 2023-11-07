@@ -10,7 +10,8 @@ namespace Fall2020_CSC403_Project {
     public static FrmBattle instance = null;
     private Enemy enemy;
     private Player player;
-        private GameOver gameover;
+    private GameOver gameover;
+    
 
     private FrmBattle() {
       InitializeComponent();
@@ -27,6 +28,7 @@ namespace Fall2020_CSC403_Project {
       // Observer pattern
       enemy.AttackEvent += PlayerDamage;
       player.AttackEvent += EnemyDamage;
+      player.HealEvent += PlayerHealing;
 
       // show health
       UpdateHealthBars();
@@ -86,7 +88,7 @@ namespace Fall2020_CSC403_Project {
       if (enemy.Health <= 0)
       {
         instance = null;
-                KillEnemy++;
+        KillEnemy++;
         Death = true;
         Close();
                 if (KillEnemy == 3)
@@ -108,12 +110,24 @@ namespace Fall2020_CSC403_Project {
             instance = null;
             Close();
         }
+        private void btnHeal_Click(object sender, EventArgs e) {
+            if (FrmLevel.havePotion > 0) { 
+                player.OnHeal(5);
+                UpdateHealthBars();
+                FrmLevel.havePotion --;
+                textBox1.Text = "X "+FrmLevel.havePotion.ToString();
+            }
+            
+        }
 
         private void EnemyDamage(int amount) {
       enemy.AlterHealth(amount);
     }
 
     private void PlayerDamage(int amount) {
+      player.AlterHealth(amount);
+    }
+        private void PlayerHealing(int amount) {
       player.AlterHealth(amount);
     }
 
@@ -131,6 +145,11 @@ namespace Fall2020_CSC403_Project {
         private void FrmBattle_FormClosing(object sender, FormClosingEventArgs e)
         {
             FrmLevel.frmlevel.CheckResult(enemy);
+        }
+
+        private void potion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

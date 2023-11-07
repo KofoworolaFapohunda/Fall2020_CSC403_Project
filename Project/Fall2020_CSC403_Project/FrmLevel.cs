@@ -12,7 +12,9 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemyCheeto;
     private Character[] walls;
     public Weapon weapon;
+    private HealingItem[] potions;
     public static bool haveAWeapon;
+    public static int havePotion = 1;
 
     private DateTime timeBegin;
     private FrmBattle frmBattle;
@@ -26,12 +28,19 @@ namespace Fall2020_CSC403_Project {
     private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
+      const int NUM_POTIONS = 1;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
       enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
       weapon = new Weapon(CreatePosition(knife), CreateCollider(knife, PADDING));
+      potions = new HealingItem[NUM_POTIONS];
+      for (int w = 0; w < NUM_POTIONS; w++) {
+        PictureBox pic = Controls.Find("heal" + w.ToString(), true)[0] as PictureBox;
+        potions[w] = new HealingItem(CreatePosition(pic), CreateCollider(pic, PADDING));
+      }
+      
 
       bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
@@ -89,14 +98,24 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid)) {
         Fight(bossKoolaid);
       }
-
+      //check weapon
+      if (HitAWeapon(player)){
+        Controls.Remove(knife);
+        weapon = new Weapon(CreatePosition(vanish), CreateCollider(vanish, 0));
+        haveAWeapon = true;
+      }
+      //check potion
+      for (int w = 0; w < potions.Length; w++) {
+        if (HitAPotion(player, potions[w])){
+          Controls.Remove(Controls.Find("heal" + w.ToString(), true)[0] as PictureBox);
+          potions[w] = new HealingItem(CreatePosition(vanish), CreateCollider(vanish, 0));
+          havePotion ++;
+        }
+      }
+      
       // update player's picture box
       picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
-            if (HitAWeapon(player))
-            {
-                Controls.Remove(knife);
-                haveAWeapon = true;
-            }
+            
         }
 
     private bool HitAWall(Character c) {
@@ -115,15 +134,21 @@ namespace Fall2020_CSC403_Project {
       return you.Collider.Intersects(other.Collider);
     }
 
-        private bool HitAWeapon(Character c)
-        {
+        private bool HitAWeapon(Character c){
             bool hitAWeapon = false;
             if (c.Collider.Intersects(weapon.Collider))
             {
                 hitAWeapon = true;
-
             }
             return hitAWeapon;
+        }
+        private bool HitAPotion(Character you, Character other){
+           for (int w = 0; w < potions.Length; w++) {
+             if (you.Collider.Intersects(potions[w].Collider)) {
+               break;
+             }     
+           }
+           return you.Collider.Intersects(other.Collider);
         }
         private void Fight(Enemy enemy) {
             player.ResetMoveSpeed();
@@ -135,11 +160,8 @@ namespace Fall2020_CSC403_Project {
         frmBattle.SetupForBossBattle();
       }
         }
-        public void CheckResult(Enemy enemy)
-        {
-            //bool checkdeath = FrmBattle.Death;
-            if (FrmBattle.Death)
-            {
+        public void CheckResult(Enemy enemy){
+            if (FrmBattle.Death){
                 Enemy_vanishing(enemy);
                 FrmBattle.Death = false;
             }

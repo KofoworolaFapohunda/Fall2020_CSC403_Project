@@ -26,6 +26,7 @@
             this.components = new System.ComponentModel.Container();
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnEscape = new System.Windows.Forms.Button();
+            this.btnHeal = new System.Windows.Forms.Button();
             this.lblPlayerHealthFull = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,18 +36,21 @@
             this.picBossBattle = new System.Windows.Forms.PictureBox();
             this.picEnemy = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.potion = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potion)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAttack
             // 
             this.btnAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttack.Location = new System.Drawing.Point(180, 556);
+            this.btnAttack.Location = new System.Drawing.Point(180, 550);
             this.btnAttack.Margin = new System.Windows.Forms.Padding(4);
             this.btnAttack.Name = "btnAttack";
-            this.btnAttack.Size = new System.Drawing.Size(192, 59);
+            this.btnAttack.Size = new System.Drawing.Size(192, 60);
             this.btnAttack.TabIndex = 2;
             this.btnAttack.Text = "Attack";
             this.btnAttack.UseVisualStyleBackColor = true;
@@ -55,14 +59,26 @@
             // btnEscape
             // 
             this.btnEscape.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEscape.Location = new System.Drawing.Point(180, 641);
+            this.btnEscape.Location = new System.Drawing.Point(180, 640);
             this.btnEscape.Margin = new System.Windows.Forms.Padding(4);
             this.btnEscape.Name = "btnEscape";
             this.btnEscape.Size = new System.Drawing.Size(192, 60);
-            this.btnEscape.TabIndex = 2;
+            this.btnEscape.TabIndex = 9;
             this.btnEscape.Text = "Escape";
             this.btnEscape.UseVisualStyleBackColor = true;
             this.btnEscape.Click += new System.EventHandler(this.btnEscape_Click);
+            // 
+            // btnHeal
+            // 
+            this.btnHeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHeal.Location = new System.Drawing.Point(180, 730);
+            this.btnHeal.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHeal.Name = "btnHeal";
+            this.btnHeal.Size = new System.Drawing.Size(192, 60);
+            this.btnHeal.TabIndex = 10;
+            this.btnHeal.Text = "Heal";
+            this.btnHeal.UseVisualStyleBackColor = true;
+            this.btnHeal.Click += new System.EventHandler(this.btnHeal_Click);
             // 
             // lblPlayerHealthFull
             // 
@@ -159,6 +175,33 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
+            // potion
+            // 
+            this.potion.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.potion.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.Potion;
+            this.potion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.potion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.potion.Location = new System.Drawing.Point(403, 730);
+            this.potion.Margin = new System.Windows.Forms.Padding(4);
+            this.potion.Name = "potion";
+            this.potion.Size = new System.Drawing.Size(46, 60);
+            this.potion.TabIndex = 11;
+            this.potion.TabStop = false;
+            this.potion.Click += new System.EventHandler(this.potion_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Green;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(456, 730);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(120, 60);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "X " + FrmLevel.havePotion.ToString();
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -174,8 +217,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.btnEscape);
+            this.Controls.Add(this.btnHeal);
             this.Controls.Add(this.picEnemy);
             this.Controls.Add(this.picPlayer);
+            this.Controls.Add(this.potion);
+            this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBattle";
@@ -185,7 +231,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potion)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
     }
 
@@ -200,7 +248,10 @@
     private System.Windows.Forms.Label lblEnemyHealthFull;
     private System.Windows.Forms.PictureBox picBossBattle;
     private System.Windows.Forms.Timer tmrFinalBattle;
-        private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Button btnEscape;
+    private System.Windows.Forms.Button btnHelp;
+    private System.Windows.Forms.Button btnEscape;
+    private System.Windows.Forms.Button btnHeal;
+    private System.Windows.Forms.PictureBox potion;
+    private System.Windows.Forms.TextBox textBox1;
     }
 }
