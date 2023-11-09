@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Level 2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Level 2.Designer.cs">
+      <DependentUpon>Level 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameOver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <EmbeddedResource Include="FrmLevel.resx">
       <DependentUpon>FrmLevel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Level 2.resx">
+      <DependentUpon>Level 2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -95,6 +104,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Tiles.webp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -122,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyGameLibrary\MyGameLibrary.csproj">
@@ -135,6 +144,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\raw images\knife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I-v3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l-v3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l-v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l-v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l-mc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level 2_Tiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level 2_BackGround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\You Win.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
