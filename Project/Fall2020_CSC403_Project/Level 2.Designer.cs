@@ -1,6 +1,6 @@
 ﻿namespace Fall2020_CSC403_Project
 {
-    partial class Form1
+    partial class Level_2
     {
         /// <summary>
         /// Required designer variable.

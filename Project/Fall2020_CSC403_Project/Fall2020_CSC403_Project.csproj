@@ -92,6 +92,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="YouWin.resx">
+      <DependentUpon>YouWin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="data\Potion.webp" />
     <None Include="Properties\Settings.settings">
