@@ -11,6 +11,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemy;
     private Player player;
     private GameOver gameover;
+    private YouWin youwin;
     
 
     private FrmBattle() {
@@ -111,8 +112,8 @@ namespace Fall2020_CSC403_Project {
         Close();
                 if (KillEnemy == 3)
                 {
-                    gameover = GameOver.GetInstance();
-                    gameover.Show();
+                    youwin = YouWin.GetInstance();
+                    youwin.Show();
                 }
       }
       if (player.Health <= 0)
