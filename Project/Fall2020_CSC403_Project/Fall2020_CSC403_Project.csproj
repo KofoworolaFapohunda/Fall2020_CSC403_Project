@@ -64,6 +64,12 @@
     <Compile Include="FrmLevel.Designer.cs">
       <DependentUpon>FrmLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level 2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Level 2.Designer.cs">
+      <DependentUpon>Level 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GameOver.resx">
@@ -139,6 +145,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\Game Over.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\I-mc1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\I-v1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\I-v2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\I-v3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\YouWin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\Level_2_Tiles.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
