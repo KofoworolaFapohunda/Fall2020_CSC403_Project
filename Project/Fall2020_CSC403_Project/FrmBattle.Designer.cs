@@ -87,17 +87,17 @@
             this.lblPlayerHealthFull.BackColor = System.Drawing.Color.Blue;
             this.lblPlayerHealthFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerHealthFull.ForeColor = System.Drawing.Color.White;
-            this.lblPlayerHealthFull.Location = new System.Drawing.Point(106, 83);
+            this.lblPlayerHealthFull.Location = new System.Drawing.Point(107, 88);
             this.lblPlayerHealthFull.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayerHealthFull.Name = "lblPlayerHealthFull";
-            this.lblPlayerHealthFull.Size = new System.Drawing.Size(339, 28);
+            this.lblPlayerHealthFull.Size = new System.Drawing.Size(340, 28);
             this.lblPlayerHealthFull.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(105, 82);
+            this.label1.Location = new System.Drawing.Point(105, 86);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(344, 32);
@@ -107,7 +107,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(772, 82);
+            this.label2.Location = new System.Drawing.Point(772, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(344, 32);
@@ -118,10 +118,10 @@
             this.lblEnemyHealthFull.BackColor = System.Drawing.Color.Blue;
             this.lblEnemyHealthFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnemyHealthFull.ForeColor = System.Drawing.Color.White;
-            this.lblEnemyHealthFull.Location = new System.Drawing.Point(774, 83);
+            this.lblEnemyHealthFull.Location = new System.Drawing.Point(774, 88);
             this.lblEnemyHealthFull.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnemyHealthFull.Name = "lblEnemyHealthFull";
-            this.lblEnemyHealthFull.Size = new System.Drawing.Size(339, 28);
+            this.lblEnemyHealthFull.Size = new System.Drawing.Size(340, 28);
             this.lblEnemyHealthFull.TabIndex = 6;
             // 
             // tmrFinalBattle
@@ -201,7 +201,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(120, 60);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "X 1";
+            
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblPlayerExpFull
@@ -209,10 +209,10 @@
             this.lblPlayerExpFull.BackColor = System.Drawing.Color.Red;
             this.lblPlayerExpFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerExpFull.ForeColor = System.Drawing.Color.White;
-            this.lblPlayerExpFull.Location = new System.Drawing.Point(106, 43);
+            this.lblPlayerExpFull.Location = new System.Drawing.Point(107, 44);
             this.lblPlayerExpFull.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayerExpFull.Name = "lblPlayerExpFull";
-            this.lblPlayerExpFull.Size = new System.Drawing.Size(339, 28);
+            this.lblPlayerExpFull.Size = new System.Drawing.Size(340, 28);
             this.lblPlayerExpFull.TabIndex = 21;
             // 
             // label3

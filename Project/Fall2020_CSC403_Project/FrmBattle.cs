@@ -35,6 +35,7 @@ namespace Fall2020_CSC403_Project {
 
             // show experience
       UpdateExpBars();
+      textBox1.Text = "X "+FrmLevel.havePotion.ToString();
     }
 
     public void SetupForBossBattle() {
