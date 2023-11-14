@@ -13,17 +13,28 @@ namespace Fall2020_CSC403_Project {
     private GameOver gameover;
     private YouWin youwin;
     public static bool Death = false;
+        public static FrmBattle GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new FrmBattle();
+            }
+            return instance;
+        }
 
 
 
-    private FrmBattle() {
+
+
+
+        private FrmBattle() {
       InitializeComponent();
       player = Game.player;
     }
 
     public void Setup() {
       // update for this enemy
-      picEnemy.BackgroundImage = enemy.Img;
+      picEnemy.Image = enemy.Img;
       picEnemy.Refresh();
       BackColor = enemy.Color;
       picBossBattle.Visible = false;
@@ -166,5 +177,9 @@ namespace Fall2020_CSC403_Project {
         private void potion_Click(object sender, EventArgs e){
 
         }
-  }
+        public PictureBox PicPlayer
+        {
+            get { return picPlayer; }
+        }
+    }
 }

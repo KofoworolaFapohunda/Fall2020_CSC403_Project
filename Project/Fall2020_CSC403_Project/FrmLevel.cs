@@ -7,9 +7,10 @@ namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
     private Player player;
 
-    private Enemy enemyPoisonPacket;
-    private Enemy bossKoolaid;
-    private Enemy enemyCheeto;
+
+    private Enemy enemyV1;
+    private Enemy enemyV2;
+    private Enemy enemyV3;
     private Character[] walls;
     public Weapon weapon;
     private HealingItem[] potions;
@@ -30,9 +31,9 @@ namespace Fall2020_CSC403_Project {
       const int NUM_POTIONS = 1;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-      bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
-      enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
-      enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+      enemyV2 = new Enemy(CreatePosition(picVillain3), CreateCollider(picVillain3, PADDING));
+      enemyV1 = new Enemy(CreatePosition(picVillain1), CreateCollider(picVillain1, PADDING));
+      enemyV3 = new Enemy(CreatePosition(picVillain2), CreateCollider(picVillain2, PADDING));
       weapon = new Weapon(CreatePosition(knife), CreateCollider(knife, PADDING));
       potions = new HealingItem[NUM_POTIONS];
       for (int w = 0; w < NUM_POTIONS; w++) {
@@ -41,13 +42,13 @@ namespace Fall2020_CSC403_Project {
       }
       
 
-      bossKoolaid.Img = picBossKoolAid.BackgroundImage;
-      enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
-      enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+      enemyV2.Img = picVillain3.Image;
+      enemyV1.Img = picVillain1.Image;
+      enemyV3.Img = picVillain2.Image;
 
-      bossKoolaid.Color = Color.Red;
-      enemyPoisonPacket.Color = Color.Green;
-      enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+      enemyV2.Color = Color.Red;
+      enemyV1.Color = Color.Green;
+      enemyV3.Color = Color.FromArgb(255, 245, 161);
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -88,14 +89,14 @@ namespace Fall2020_CSC403_Project {
       }
 
       // check collision with enemies
-      if (HitAChar(player, enemyPoisonPacket)) {
-        Fight(enemyPoisonPacket);
+      if (HitAChar(player, enemyV1)) {
+        Fight(enemyV1);
       }
-      else if (HitAChar(player, enemyCheeto)) {
-        Fight(enemyCheeto);
+      else if (HitAChar(player, enemyV3)) {
+        Fight(enemyV3);
       }
-      if (HitAChar(player, bossKoolaid)) {
-        Fight(bossKoolaid);
+      if (HitAChar(player, enemyV2)) {
+        Fight(enemyV2);
       }
       //check weapon
       if (HitAWeapon(player)){
@@ -154,7 +155,7 @@ namespace Fall2020_CSC403_Project {
         frmBattle = FrmBattle.GetInstance(enemy);
         frmBattle.Show();
 
-        if (enemy == bossKoolaid) {
+        if (enemy == enemyV2) {
             frmBattle.SetupForBossBattle();
         }
     }
@@ -165,17 +166,17 @@ namespace Fall2020_CSC403_Project {
         }
     }
     private void Enemy_vanishing(Enemy enemy) {
-        if (enemy == enemyPoisonPacket) {
-            Controls.Remove(picEnemyPoisonPacket);
-            enemyPoisonPacket = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
+        if (enemy == enemyV1) {
+            Controls.Remove(picVillain1);
+            enemyV1 = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
         }
-        else if (enemy == bossKoolaid) {
-            picBossKoolAid.Dispose();
-            bossKoolaid = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
+        else if (enemy == enemyV2) {
+            picVillain3.Dispose();
+            enemyV2 = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
         }
-        else if (enemy == enemyCheeto) {
-            picEnemyCheeto.Dispose();
-            enemyCheeto = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
+        else if (enemy == enemyV3) {
+            picVillain2.Dispose();
+            enemyV3 = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
         }
     }
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
@@ -205,5 +206,10 @@ namespace Fall2020_CSC403_Project {
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-  }
+
+        private void picPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

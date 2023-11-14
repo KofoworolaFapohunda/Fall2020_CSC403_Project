@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmSelectCharacter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectCharacter.Designer.cs">
+      <DependentUpon>FrmSelectCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameOver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="YouWin.Designer.cs">
       <DependentUpon>YouWin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmSelectCharacter.resx">
+      <DependentUpon>FrmSelectCharacter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +184,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Level_2_Tiles.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\mc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\mc2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\mc3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\v3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
