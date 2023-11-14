@@ -41,10 +41,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelpotion = new System.Windows.Forms.Label();
             this.labellv = new System.Windows.Forms.Label();
+            this.advert = new System.Windows.Forms.Panel();
+            this.AdExit = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.potion)).BeginInit();
+            this.advert.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAttack
@@ -216,8 +220,8 @@
             // labelpotion
             // 
             this.labelpotion.BackColor = System.Drawing.Color.DarkGray;
-            this.labelpotion.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelpotion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelpotion.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelpotion.Location = new System.Drawing.Point(456, 730);
             this.labelpotion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelpotion.Name = "labelpotion";
@@ -227,13 +231,38 @@
             // labellv
             // 
             this.labellv.BackColor = System.Drawing.Color.DarkGray;
-            this.labellv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labellv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labellv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labellv.Location = new System.Drawing.Point(456, 40);
             this.labellv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labellv.Name = "labelpotion";
+            this.labellv.Name = "labellv";
             this.labellv.Size = new System.Drawing.Size(80, 32);
             this.labellv.TabIndex = 24;
+            // 
+            // advert
+            // 
+            this.advert.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.Advert;
+            this.advert.Controls.Add(this.AdExit);
+            this.advert.Location = new System.Drawing.Point(12, 12);
+            this.advert.Name = "advert";
+            this.advert.Size = new System.Drawing.Size(1209, 778);
+            this.advert.TabIndex = 9;
+            this.advert.Click += new System.EventHandler(this.advert_Click);
+            // 
+            // AdExit
+            // 
+            this.AdExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdExit.Location = new System.Drawing.Point(1146, 0);
+            this.AdExit.Name = "AdExit";
+            this.AdExit.Size = new System.Drawing.Size(63, 35);
+            this.AdExit.TabIndex = 10;
+            this.AdExit.Text = "EXIT";
+            this.AdExit.Click += new System.EventHandler(this.AdExit_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 800;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmBattle
             // 
@@ -242,8 +271,9 @@
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1233, 835);
-            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.picBossBattle);
+            this.Controls.Add(this.advert);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblEnemyHealthFull);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPlayerHealthFull);
@@ -268,8 +298,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.potion)).EndInit();
+            this.advert.ResumeLayout(false);
+            this.advert.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
     }
 
@@ -292,5 +323,8 @@
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label labelpotion;
     private System.Windows.Forms.Label labellv;
+    private System.Windows.Forms.Panel advert;
+    private System.Windows.Forms.TextBox AdExit;
+    private System.Windows.Forms.Timer timer1;
     }
 }

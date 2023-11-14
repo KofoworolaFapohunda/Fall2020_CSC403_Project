@@ -180,5 +180,8 @@
   <ItemGroup>
     <None Include="data\AssassinsCreed2.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\Advert.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

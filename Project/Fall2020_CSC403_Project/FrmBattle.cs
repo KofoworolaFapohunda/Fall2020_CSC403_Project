@@ -1,6 +1,7 @@
 ﻿using Fall2020_CSC403_Project.code;
 using Fall2020_CSC403_Project.Properties;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
@@ -13,10 +14,16 @@ namespace Fall2020_CSC403_Project {
     private GameOver gameover;
     private YouWin youwin;
     public static bool Death = false;
+    //Initializing advert Panel and declaring variables
+    private static int characterbattle;
+    private List<string> texts = new List<string> { "5", "4", "3", "2", "EXIT" };
+    private int currentIndex = 0;
+    private bool ad3start = false;// sets it to false
+    string urlToOpen = "";
 
 
 
-    private FrmBattle() {
+        private FrmBattle() {
       InitializeComponent();
       player = Game.player;
     }
@@ -153,8 +160,72 @@ namespace Fall2020_CSC403_Project {
             picBossBattle.Visible = false;
             tmrFinalBattle.Enabled = false;
             BgdTrack.PlayBackgroundTrack();//Calling the background music to start again
+            /// advert functionality
+            ///////////////////////////////start			
+            string val = BackColor.Name.ToString();
+            if (val == "Red") {
+                //Show possible games to download
+                //Check if tthe boss has been defeated 
+                AdVisible(val);
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e) {
+            if (currentIndex < texts.Count)
+            {
+                AdExit.Text = texts[currentIndex];
+                currentIndex++;
+            }
+            else
+            {
+                // When you reach the end of the list, reset the index to start over.
+                currentIndex = 0;
+            }
+            if (AdExit.Text == "EXIT")
+            {
+                timer1.Stop();
+            }
         }
 
+        private void AdVisible(string color)
+        {
+            timer1.Start();
+
+            if (color == "Red") {
+                urlToOpen = "https://www.microsoft.com/en-us/store/top-free/games/pc"; //  URL to take you to the next game to download
+                advert.BackgroundImage = Resources.Advert;
+
+                advert.Visible = true;
+                advert.Enabled = true;
+            }
+
+            advert.Visible = true;
+            advert.Enabled = true;
+        }
+
+        private void AdExit_Click(object sender, EventArgs e) {
+            if (AdExit.Text == "EXIT")
+            {
+                advert.Visible = false;
+                advert.Enabled = false;
+                ad3start = false;
+                timer1.Stop();
+            }
+        }
+        private void advert_Click(object sender, EventArgs e) {
+            // Specify the URL you want to open in the default web browser
+            try {
+                // Open the default web browser with the specified URL
+                System.Diagnostics.Process.Start(urlToOpen);
+            }
+            catch (Exception ex) {
+                // Handle any exceptions that might occur when opening the web browser
+                MessageBox.Show("An error occurred while opening the web browser: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }   ///////////////////////////////////////////////stop			
+
+        /// advert ends
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHelp_Click(object sender, EventArgs e) {
             string documentationUrl = "https://docs.google.com/document/d/158qKBqjiTSbWiRfbgNZ-8zu_gsyhuzam8IXES70mpeU/edit"; // link to google docs FAQ
             System.Diagnostics.Process.Start(documentationUrl);
