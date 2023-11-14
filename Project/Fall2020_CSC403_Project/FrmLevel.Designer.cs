@@ -48,6 +48,11 @@
             this.knife = new System.Windows.Forms.PictureBox();
             this.vanish = new System.Windows.Forms.PictureBox();
             this.heal0 = new System.Windows.Forms.PictureBox();
+            this.lblPlayerExpFull = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblPlayerHealthFull = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labellv = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
@@ -332,6 +337,59 @@
             this.heal0.TabIndex = 19;
             this.heal0.TabStop = false;
             // 
+            // lblPlayerExpFull
+            // 
+            this.lblPlayerExpFull.BackColor = System.Drawing.Color.Red;
+            this.lblPlayerExpFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerExpFull.ForeColor = System.Drawing.Color.White;
+            this.lblPlayerExpFull.Location = new System.Drawing.Point(1533, 12);
+            this.lblPlayerExpFull.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlayerExpFull.Name = "lblPlayerExpFull";
+            this.lblPlayerExpFull.Size = new System.Drawing.Size(227, 28);
+            this.lblPlayerExpFull.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Location = new System.Drawing.Point(1531, 10);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(231, 32);
+            this.label3.TabIndex = 22;
+            // 
+            // lblPlayerHealthFull
+            // 
+            this.lblPlayerHealthFull.BackColor = System.Drawing.Color.Blue;
+            this.lblPlayerHealthFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerHealthFull.ForeColor = System.Drawing.Color.White;
+            this.lblPlayerHealthFull.Location = new System.Drawing.Point(1533, 52);
+            this.lblPlayerHealthFull.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlayerHealthFull.Name = "lblPlayerHealthFull";
+            this.lblPlayerHealthFull.Size = new System.Drawing.Size(227, 28);
+            this.lblPlayerHealthFull.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(1531, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 32);
+            this.label1.TabIndex = 4;
+            // 
+            // labellv
+            // 
+            this.labellv.BackColor = System.Drawing.Color.DarkGray;
+            this.labellv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labellv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labellv.Location = new System.Drawing.Point(1417, 28);
+            this.labellv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labellv.Name = "labellv";
+            this.labellv.Size = new System.Drawing.Size(80, 32);
+            this.labellv.TabIndex = 24;
+            // 
             // FrmLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -340,11 +398,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1764, 1005);
             this.Controls.Add(this.picWall11);
-            this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall8);
             this.Controls.Add(this.picWall7);
             this.Controls.Add(this.lblInGameTime);
-            this.Controls.Add(this.picWall1);
             this.Controls.Add(this.picWall0);
             this.Controls.Add(this.picWall10);
             this.Controls.Add(this.picWall9);
@@ -359,6 +415,13 @@
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.knife);
             this.Controls.Add(this.heal0);
+            this.Controls.Add(this.lblPlayerHealthFull);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPlayerExpFull);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labellv);
+            this.Controls.Add(this.picWall2);
+            this.Controls.Add(this.picWall1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLevel";
@@ -417,6 +480,11 @@
     private System.Windows.Forms.PictureBox knife;
     private System.Windows.Forms.PictureBox vanish;
     private System.Windows.Forms.PictureBox heal0;
+    private System.Windows.Forms.Label lblPlayerHealthFull;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Label lblPlayerExpFull;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label labellv;
     }
 }
 

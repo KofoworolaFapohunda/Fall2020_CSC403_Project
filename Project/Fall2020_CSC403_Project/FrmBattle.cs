@@ -38,7 +38,7 @@ namespace Fall2020_CSC403_Project {
 
       // show experience
       UpdateExpBars();
-      textBox1.Text = "X "+HealingItem.havePotion.ToString();
+      labelpotion.Text = "X " + HealingItem.havePotion.ToString();
     }
 
     public void SetupForBossBattle() {
@@ -74,11 +74,11 @@ namespace Fall2020_CSC403_Project {
     }
     private void UpdateExpBars() {
       float playerExpPer = player.Experience / (float)player.maxExp;
-      const int MAX_EXPBAR_WIDTH = 200;
+      const int MAX_EXPBAR_WIDTH = 226;
       lblPlayerExpFull.Width = (int)(MAX_EXPBAR_WIDTH * playerExpPer);
       lblPlayerExpFull.Text = "EXP: " + player.Experience.ToString();
-      textBox2.Text = "Lv." + player.Level.ToString();
-    }
+      labellv.Text = "Lv." + player.Level.ToString();
+        }
 
 
 
@@ -133,7 +133,7 @@ namespace Fall2020_CSC403_Project {
                 player.OnHeal(5);
                 UpdateHealthBars();
                 HealingItem.havePotion --;
-                textBox1.Text = "X "+HealingItem.havePotion.ToString();
+                labelpotion.Text = "X " + HealingItem.havePotion.ToString();
             }
             
         }
@@ -161,6 +161,7 @@ namespace Fall2020_CSC403_Project {
 
         private void FrmBattle_FormClosing(object sender, FormClosingEventArgs e) {
             FrmLevel.frmlevel.CheckResult(enemy);
+            FrmLevel.frmlevel.UpdatePlayerStatus(player.Health, player.MaxHealth, player.Experience, player.maxExp, player.Level);
         }
 
         private void potion_Click(object sender, EventArgs e){

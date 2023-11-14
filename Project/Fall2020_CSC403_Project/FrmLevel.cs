@@ -57,6 +57,7 @@ namespace Fall2020_CSC403_Project {
 
       Game.player = player;
       timeBegin = DateTime.Now;
+      UpdatePlayerStatus(30, 30, 0, 20, 0);
     }
 
     private Vector2 CreatePosition(PictureBox pic) {
@@ -178,6 +179,17 @@ namespace Fall2020_CSC403_Project {
             enemyCheeto = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
         }
     }
+    public void UpdatePlayerStatus(int Health, int MaxHealth, int Experience, int maxExp, int level) {
+            float playerHealthPer = Health / (float)MaxHealth;
+            const int MAX_HEALTHBAR_WIDTH = 151;
+            lblPlayerHealthFull.Width = (int)(MAX_HEALTHBAR_WIDTH * playerHealthPer);
+            lblPlayerHealthFull.Text = "HP: " + Health.ToString();
+            float playerExpPer = Experience / (float)maxExp;
+            const int MAX_EXPBAR_WIDTH = 151;
+            lblPlayerExpFull.Width = (int)(MAX_EXPBAR_WIDTH * playerExpPer);
+            lblPlayerExpFull.Text = "EXP: " + Experience.ToString();
+            labellv.Text = "Lv." + level.ToString();
+        }
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
         switch (e.KeyCode) {
           case Keys.Left:

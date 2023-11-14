@@ -37,10 +37,10 @@
             this.picEnemy = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.potion = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblPlayerExpFull = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.labelpotion = new System.Windows.Forms.Label();
+            this.labellv = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -192,30 +192,6 @@
             this.potion.TabStop = false;
             this.potion.Click += new System.EventHandler(this.potion_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(456, 730);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 60);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(456, 40);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(80, 32);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // lblPlayerExpFull
             // 
             this.lblPlayerExpFull.BackColor = System.Drawing.Color.Red;
@@ -237,6 +213,28 @@
             this.label3.Size = new System.Drawing.Size(344, 32);
             this.label3.TabIndex = 22;
             // 
+            // labelpotion
+            // 
+            this.labelpotion.BackColor = System.Drawing.Color.DarkGray;
+            this.labelpotion.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelpotion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelpotion.Location = new System.Drawing.Point(456, 730);
+            this.labelpotion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelpotion.Name = "labelpotion";
+            this.labelpotion.Size = new System.Drawing.Size(120, 60);
+            this.labelpotion.TabIndex = 23;
+            // 
+            // labellv
+            // 
+            this.labellv.BackColor = System.Drawing.Color.DarkGray;
+            this.labellv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labellv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labellv.Location = new System.Drawing.Point(456, 40);
+            this.labellv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labellv.Name = "labelpotion";
+            this.labellv.Size = new System.Drawing.Size(80, 32);
+            this.labellv.TabIndex = 24;
+            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -256,10 +254,10 @@
             this.Controls.Add(this.picEnemy);
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.potion);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblPlayerExpFull);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.labelpotion);
+            this.Controls.Add(this.labellv);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBattle";
@@ -290,9 +288,9 @@
     private System.Windows.Forms.Button btnEscape;
     private System.Windows.Forms.Button btnHeal;
     private System.Windows.Forms.PictureBox potion;
-    private System.Windows.Forms.TextBox textBox1;
     private System.Windows.Forms.Label lblPlayerExpFull;
     private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.TextBox textBox2;
+    private System.Windows.Forms.Label labelpotion;
+    private System.Windows.Forms.Label labellv;
     }
 }
