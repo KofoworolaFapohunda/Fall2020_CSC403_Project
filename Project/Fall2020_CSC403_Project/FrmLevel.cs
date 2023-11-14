@@ -18,10 +18,17 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     public static FrmLevel frmlevel = null; 
+    public static FrmLevel instance = null;
     
     public FrmLevel() {
       InitializeComponent();
       frmlevel = this;
+    }
+    public static FrmLevel GetInstance() {
+      if (instance == null) {
+        instance = new FrmLevel();
+      }
+      return instance;
     }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
