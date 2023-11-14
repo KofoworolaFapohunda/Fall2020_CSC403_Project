@@ -13,17 +13,16 @@ namespace Fall2020_CSC403_Project {
     private Character[] walls;
     public Weapon weapon;
     private HealingItem[] potions;
-    public static bool haveAWeapon;
-    public static int havePotion = 1;
-
+    public static int KillEnemy = 0;
+    public static int NumOfEnemy = 3;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     public static FrmLevel frmlevel = null; 
     
     public FrmLevel() {
       InitializeComponent();
-            frmlevel = this;
-        }
+      frmlevel = this;
+    }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
@@ -102,14 +101,14 @@ namespace Fall2020_CSC403_Project {
       if (HitAWeapon(player)){
         Controls.Remove(knife);
         weapon = new Weapon(CreatePosition(vanish), CreateCollider(vanish, 0));
-        haveAWeapon = true;
+        Weapon.haveAWeapon = true;
       }
       //check potion
       for (int w = 0; w < potions.Length; w++) {
         if (HitAPotion(player, potions[w])){
           Controls.Remove(Controls.Find("heal" + w.ToString(), true)[0] as PictureBox);
           potions[w] = new HealingItem(CreatePosition(vanish), CreateCollider(vanish, 0));
-          havePotion ++;
+          HealingItem.havePotion ++;
         }
       }
       
@@ -134,78 +133,73 @@ namespace Fall2020_CSC403_Project {
       return you.Collider.Intersects(other.Collider);
     }
 
-        private bool HitAWeapon(Character c){
-            bool hitAWeapon = false;
-            if (c.Collider.Intersects(weapon.Collider))
-            {
-                hitAWeapon = true;
-            }
-            return hitAWeapon;
+    private bool HitAWeapon(Character c) {
+        bool hitAWeapon = false;
+        if (c.Collider.Intersects(weapon.Collider)) {
+            hitAWeapon = true;
         }
-        private bool HitAPotion(Character you, Character other){
-           for (int w = 0; w < potions.Length; w++) {
-             if (you.Collider.Intersects(potions[w].Collider)) {
-               break;
-             }     
-           }
-           return you.Collider.Intersects(other.Collider);
-        }
-        private void Fight(Enemy enemy) {
-            player.ResetMoveSpeed();
-            player.MoveBack();
-            frmBattle = FrmBattle.GetInstance(enemy);
-            frmBattle.Show();
+        return hitAWeapon;
+    }
+    private bool HitAPotion(Character you, Character other){
+       for (int w = 0; w < potions.Length; w++) {
+         if (you.Collider.Intersects(potions[w].Collider)) {
+           break;
+         }     
+       }
+       return you.Collider.Intersects(other.Collider);
+    }
+    private void Fight(Enemy enemy) {
+        player.ResetMoveSpeed();
+        player.MoveBack();
+        frmBattle = FrmBattle.GetInstance(enemy);
+        frmBattle.Show();
 
-      if (enemy == bossKoolaid) {
-        frmBattle.SetupForBossBattle();
-      }
+        if (enemy == bossKoolaid) {
+            frmBattle.SetupForBossBattle();
         }
-        public void CheckResult(Enemy enemy){
-            if (FrmBattle.Death){
-                Enemy_vanishing(enemy);
-                FrmBattle.Death = false;
-            }
+    }
+    public void CheckResult(Enemy enemy){
+        if (FrmBattle.Death){
+            Enemy_vanishing(enemy);
+            FrmBattle.Death = false;
         }
-        private void Enemy_vanishing(Enemy enemy)
-        {
-            if (enemy == enemyPoisonPacket)
-            {
-                Controls.Remove(picEnemyPoisonPacket);
-                enemyPoisonPacket = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
-            }
-            else if (enemy == bossKoolaid)
-            {
-                picBossKoolAid.Dispose();
-                bossKoolaid = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
-            }
-            else if (enemy == enemyCheeto)
-            {
-                picEnemyCheeto.Dispose();
-                enemyCheeto = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
-            }
+    }
+    private void Enemy_vanishing(Enemy enemy) {
+        if (enemy == enemyPoisonPacket) {
+            Controls.Remove(picEnemyPoisonPacket);
+            enemyPoisonPacket = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
         }
-            private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
-      switch (e.KeyCode) {
-        case Keys.Left:
-          player.GoLeft();
+        else if (enemy == bossKoolaid) {
+            picBossKoolAid.Dispose();
+            bossKoolaid = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
+        }
+        else if (enemy == enemyCheeto) {
+            picEnemyCheeto.Dispose();
+            enemyCheeto = new Enemy(CreatePosition(vanish), CreateCollider(vanish, 0));
+        }
+    }
+    private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+        switch (e.KeyCode) {
+          case Keys.Left:
+            player.GoLeft();
           break;
 
         case Keys.Right:
-          player.GoRight();
+            player.GoRight();
           break;
 
         case Keys.Up:
-          player.GoUp();
+            player.GoUp();
           break;
 
         case Keys.Down:
-          player.GoDown();
+            player.GoDown();
           break;
 
         default:
-          player.ResetMoveSpeed();
+            player.ResetMoveSpeed();
           break;
-      }
+        }
     }
 
     private void lblInGameTime_Click(object sender, EventArgs e) {

@@ -12,7 +12,9 @@ namespace Fall2020_CSC403_Project {
     private Player player;
     private GameOver gameover;
     private YouWin youwin;
-    
+    public static bool Death = false;
+
+
 
     private FrmBattle() {
       InitializeComponent();
@@ -34,9 +36,9 @@ namespace Fall2020_CSC403_Project {
       // show health
       UpdateHealthBars();
 
-            // show experience
+      // show experience
       UpdateExpBars();
-      textBox1.Text = "X "+FrmLevel.havePotion.ToString();
+      textBox1.Text = "X "+HealingItem.havePotion.ToString();
     }
 
     public void SetupForBossBattle() {
@@ -67,22 +69,22 @@ namespace Fall2020_CSC403_Project {
       lblPlayerHealthFull.Width = (int)(MAX_HEALTHBAR_WIDTH * playerHealthPer);
       lblEnemyHealthFull.Width = (int)(MAX_HEALTHBAR_WIDTH * enemyHealthPer);
 
-      lblPlayerHealthFull.Text = player.Health.ToString();
-      lblEnemyHealthFull.Text = enemy.Health.ToString();
+      lblPlayerHealthFull.Text = "HP: " + player.Health.ToString();
+      lblEnemyHealthFull.Text = "HP: " + enemy.Health.ToString();
     }
     private void UpdateExpBars() {
       float playerExpPer = player.Experience / (float)player.maxExp;
       const int MAX_EXPBAR_WIDTH = 200;
       lblPlayerExpFull.Width = (int)(MAX_EXPBAR_WIDTH * playerExpPer);
-      lblPlayerExpFull.Text = player.Experience.ToString();
+      lblPlayerExpFull.Text = "EXP: " + player.Experience.ToString();
+      textBox2.Text = "Lv." + player.Level.ToString();
     }
 
 
-        public static bool Death = false;
-        public static int KillEnemy = 0;
+
         private void btnAttack_Click(object sender, EventArgs e) {
             SoundPlayer attack_audio = new SoundPlayer(Resources.boom);
-            bool checkweapon = FrmLevel.haveAWeapon;
+            bool checkweapon = Weapon.haveAWeapon;
             if (checkweapon)
             {
                 player.OnAttack(-8);
@@ -98,77 +100,71 @@ namespace Fall2020_CSC403_Project {
             if (enemy.Health > 0) {
                 attack_audio.Play();
                 enemy.OnAttack(-2);
-      }
+            }
 
-      UpdateHealthBars();
+            UpdateHealthBars();
             Death = false;
-      if (enemy.Health <= 0)
-      {
-        instance = null;
-        KillEnemy++;
-        player.UpdateExp(10);
-        UpdateExpBars();
-        Death = true;
-        Close();
-                if (KillEnemy == 3)
+            if (enemy.Health <= 0){
+                instance = null;
+                FrmLevel.KillEnemy++;
+                player.UpdateExp(10);
+                UpdateExpBars();
+                Death = true;
+                Close();
+                if (FrmLevel.KillEnemy == FrmLevel.NumOfEnemy)
                 {
                     youwin = YouWin.GetInstance();
                     youwin.Show();
                 }
-      }
-      if (player.Health <= 0)
-            {
+            }
+            if (player.Health <= 0){
                 instance = null;
                 Close();
                 gameover = GameOver.GetInstance();
                 gameover.Show();
             }
-    }
-        private void btnEscape_Click(object sender, EventArgs e)
-        {
+        }
+        private void btnEscape_Click(object sender, EventArgs e) {
             instance = null;
             Close();
         }
         private void btnHeal_Click(object sender, EventArgs e) {
-            if (FrmLevel.havePotion > 0) { 
+            if (HealingItem.havePotion > 0) { 
                 player.OnHeal(5);
                 UpdateHealthBars();
-                FrmLevel.havePotion --;
-                textBox1.Text = "X "+FrmLevel.havePotion.ToString();
+                HealingItem.havePotion --;
+                textBox1.Text = "X "+HealingItem.havePotion.ToString();
             }
             
         }
 
         private void EnemyDamage(int amount) {
-      enemy.AlterHealth(amount);
-    }
+            enemy.AlterHealth(amount);
+        }
 
-    private void PlayerDamage(int amount) {
-      player.AlterHealth(amount);
-    }
+        private void PlayerDamage(int amount) {
+             player.AlterHealth(amount);
+        }
         private void PlayerHealing(int amount) {
-      player.AlterHealth(amount);
-    }
+            player.AlterHealth(amount);
+        }
 
-    private void tmrFinalBattle_Tick(object sender, EventArgs e) {
-      picBossBattle.Visible = false;
-      tmrFinalBattle.Enabled = false;
-    }
+        private void tmrFinalBattle_Tick(object sender, EventArgs e) {
+            picBossBattle.Visible = false;
+            tmrFinalBattle.Enabled = false;
+        }
 
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
+        private void btnHelp_Click(object sender, EventArgs e) {
             string documentationUrl = "https://docs.google.com/document/d/158qKBqjiTSbWiRfbgNZ-8zu_gsyhuzam8IXES70mpeU/edit"; // link to google docs FAQ
             System.Diagnostics.Process.Start(documentationUrl);
         }
 
-        private void FrmBattle_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        private void FrmBattle_FormClosing(object sender, FormClosingEventArgs e) {
             FrmLevel.frmlevel.CheckResult(enemy);
         }
 
-        private void potion_Click(object sender, EventArgs e)
-        {
+        private void potion_Click(object sender, EventArgs e){
 
         }
-    }
+  }
 }

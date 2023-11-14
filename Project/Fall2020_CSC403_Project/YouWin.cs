@@ -32,6 +32,8 @@ namespace Fall2020_CSC403_Project
         {
             level2 = Level_2.GetInstance();
             level2.Show();
+            Close();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
