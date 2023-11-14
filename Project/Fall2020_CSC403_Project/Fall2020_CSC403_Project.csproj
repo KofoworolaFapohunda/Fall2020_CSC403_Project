@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BgdTrack.cs" />
     <Compile Include="GameOver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\Level_2_Tiles.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\AssassinsCreed2.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

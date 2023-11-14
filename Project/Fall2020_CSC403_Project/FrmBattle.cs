@@ -152,6 +152,7 @@ namespace Fall2020_CSC403_Project {
         private void tmrFinalBattle_Tick(object sender, EventArgs e) {
             picBossBattle.Visible = false;
             tmrFinalBattle.Enabled = false;
+            BgdTrack.PlayBackgroundTrack();//Calling the background music to start again
         }
 
         private void btnHelp_Click(object sender, EventArgs e) {

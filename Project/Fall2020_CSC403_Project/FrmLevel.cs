@@ -58,6 +58,7 @@ namespace Fall2020_CSC403_Project {
       Game.player = player;
       timeBegin = DateTime.Now;
       UpdatePlayerStatus(30, 30, 0, 20, 0);
+      BgdTrack.PlayBackgroundTrack(); //Calling the background music
     }
 
     private Vector2 CreatePosition(PictureBox pic) {
