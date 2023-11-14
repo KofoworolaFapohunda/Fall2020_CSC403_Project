@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace Fall2020_CSC403_Project.code {
         public event Action<int> HealEvent;
         public int Level { get; private set; }
         public int Experience { get; private set; }
+        public Image Img { get; set; }
+        public Color Color { get; set; }
         public int maxExp;
         public void UpdateExp(int v)
         {

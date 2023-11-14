@@ -13,15 +13,15 @@ namespace Fall2020_CSC403_Project
 {
     public partial class Welcome : Form
     {
-        private FrmLevel frmlevel;
+        private FrmSelectCharacter frmSC;
         public Welcome() {
             InitializeComponent();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            frmlevel = new FrmLevel();
-            frmlevel.Show();
+            frmSC = new FrmSelectCharacter();
+            frmSC.Show();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

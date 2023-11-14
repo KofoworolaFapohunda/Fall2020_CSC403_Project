@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BgdTrack.cs" />
+    <Compile Include="FrmSelectCharacters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectCharacters.Designer.cs">
+      <DependentUpon>FrmSelectCharacters.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameOver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="YouWin.Designer.cs">
       <DependentUpon>YouWin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmSelectCharacters.resx">
+      <DependentUpon>FrmSelectCharacters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +203,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\welcome.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\mc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\mc2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\mc3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\v3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

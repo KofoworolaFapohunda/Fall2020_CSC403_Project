@@ -24,13 +24,19 @@ namespace Fall2020_CSC403_Project {
       InitializeComponent();
       frmlevel = this;
     }
-    public static FrmLevel GetInstance() {
+    public static FrmLevel GetInstance(Player player) {
       if (instance == null) {
         instance = new FrmLevel();
+        instance.player = player;
+        instance.Setup();
       }
       return instance;
     }
+    public void Setup() {
+        picPlayer.BackgroundImage = player.Img;
+        picPlayer.Refresh();
 
+    }
     private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
