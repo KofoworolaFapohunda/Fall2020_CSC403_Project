@@ -15,7 +15,6 @@ namespace Fall2020_CSC403_Project {
     private YouWin youwin;
     public static bool Death = false;
     //Initializing advert Panel and declaring variables
-    private static int characterbattle;
     private List<string> texts = new List<string> { "5", "4", "3", "2", "EXIT" };
     private int currentIndex = 0;
     private bool ad3start = false;// sets it to false

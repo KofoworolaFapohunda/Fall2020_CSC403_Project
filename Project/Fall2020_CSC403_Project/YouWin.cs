@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fall2020_CSC403_Project.code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,9 @@ namespace Fall2020_CSC403_Project
 {
     public partial class YouWin : Form
     {
+        private Player player;
         public static YouWin instance = null;
-        private Level_2 level2;
+        private FrmLevel2 frmlevel2;
         public YouWin()
         {
             InitializeComponent();
@@ -30,13 +32,13 @@ namespace Fall2020_CSC403_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            level2 = Level_2.GetInstance();
-            level2.Show();
+            frmlevel2 = FrmLevel2.GetInstance();
+            frmlevel2.Show();
             Close();
-            
+
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+    private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

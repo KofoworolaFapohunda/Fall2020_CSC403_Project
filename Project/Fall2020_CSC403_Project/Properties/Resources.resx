@@ -151,21 +151,6 @@
   <data name="Game_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\Game Over.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_mc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\I-mc1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\I-v1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\I-v2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I_v3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\I-v3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Level_2_Tiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\Level_2_Tiles.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="YouWin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\YouWin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,5 +183,20 @@
   </data>
   <data name="v3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\v3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemy_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\enemy_v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemy_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\enemy_v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemy_v3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\enemy_v3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\player2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wall2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\wall2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

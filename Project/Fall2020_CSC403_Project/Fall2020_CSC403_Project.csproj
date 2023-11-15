@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BgdTrack.cs" />
+    <Compile Include="FrmBattle2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBattle2.Designer.cs">
+      <DependentUpon>FrmBattle2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSelectCharacters.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,11 +77,11 @@
     <Compile Include="FrmLevel.Designer.cs">
       <DependentUpon>FrmLevel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Level 2.cs">
+    <Compile Include="FrmLevel2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Level 2.Designer.cs">
-      <DependentUpon>Level 2.cs</DependentUpon>
+    <Compile Include="FrmLevel2.Designer.cs">
+      <DependentUpon>FrmLevel2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +97,9 @@
     <Compile Include="YouWin.Designer.cs">
       <DependentUpon>YouWin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmLevel2.resx">
+      <DependentUpon>FrmLevel2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSelectCharacters.resx">
       <DependentUpon>FrmSelectCharacters.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,18 +187,6 @@
     <None Include="data\Game Over.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\I-mc1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="data\I-v1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="data\I-v2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="data\I-v3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="data\YouWin.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +221,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\wall2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\enemy_v3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\player2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
