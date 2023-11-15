@@ -172,7 +172,7 @@
             // picPlayer
             // 
             this.picPlayer.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
+            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.mc1;
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picPlayer.Location = new System.Drawing.Point(105, 136);

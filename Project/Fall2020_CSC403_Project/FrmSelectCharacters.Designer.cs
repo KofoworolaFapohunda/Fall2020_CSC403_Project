@@ -40,9 +40,9 @@
             // select_charatecter_text
             // 
             this.select_charatecter_text.AutoSize = true;
-            this.select_charatecter_text.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.select_charatecter_text.BackColor = System.Drawing.Color.Transparent;
             this.select_charatecter_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.select_charatecter_text.ForeColor = System.Drawing.Color.Brown;
+            this.select_charatecter_text.ForeColor = System.Drawing.Color.HotPink;
             this.select_charatecter_text.Location = new System.Drawing.Point(300, 35);
             this.select_charatecter_text.Name = "select_charatecter_text";
             this.select_charatecter_text.Size = new System.Drawing.Size(806, 91);
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.background;
+            this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.selectcharbackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1390, 695);
             this.Controls.Add(this.picNobara);

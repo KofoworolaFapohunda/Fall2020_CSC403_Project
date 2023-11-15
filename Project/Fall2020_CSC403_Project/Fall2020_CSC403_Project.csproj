@@ -237,5 +237,11 @@
   <ItemGroup>
     <None Include="data\player2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\selectcharbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\background ice.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
