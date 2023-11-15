@@ -47,16 +47,6 @@ namespace Fall2020_CSC403_Project {
       labelpotion.Text = "X " + HealingItem.havePotion.ToString();
     }
 
-    public void SetupForBossBattle() {
-      picBossBattle.Location = Point.Empty;
-      picBossBattle.Size = ClientSize;
-      picBossBattle.Visible = true;
-
-      SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
-      simpleSound.Play();
-
-      tmrFinalBattle.Enabled = true;
-    }
 
     public static FrmBattle GetInstance(Enemy enemy) {
       if (instance == null) {
@@ -155,19 +145,7 @@ namespace Fall2020_CSC403_Project {
             player.AlterHealth(amount);
         }
 
-        private void tmrFinalBattle_Tick(object sender, EventArgs e) {
-            picBossBattle.Visible = false;
-            tmrFinalBattle.Enabled = false;
-            BgdTrack.PlayBackgroundTrack();//Calling the background music to start again
-            /// advert functionality
-            ///////////////////////////////start			
-            string val = BackColor.Name.ToString();
-            if (val == "Red") {
-                //Show possible games to download
-                //Check if tthe boss has been defeated 
-                AdVisible(val);
-            }
-        }
+                
         private void timer1_Tick(object sender, EventArgs e) {
             if (currentIndex < texts.Count)
             {

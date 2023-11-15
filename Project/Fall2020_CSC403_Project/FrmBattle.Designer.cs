@@ -127,12 +127,7 @@
             this.lblEnemyHealthFull.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnemyHealthFull.Name = "lblEnemyHealthFull";
             this.lblEnemyHealthFull.Size = new System.Drawing.Size(340, 28);
-            this.lblEnemyHealthFull.TabIndex = 6;
-            // 
-            // tmrFinalBattle
-            // 
-            this.tmrFinalBattle.Interval = 5600;
-            this.tmrFinalBattle.Tick += new System.EventHandler(this.tmrFinalBattle_Tick);
+            this.lblEnemyHealthFull.TabIndex = 6;            
             // 
             // btnHelp
             // 
@@ -142,19 +137,7 @@
             this.btnHelp.TabIndex = 8;
             this.btnHelp.Text = "FAQ";
             this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // picBossBattle
-            // 
-            this.picBossBattle.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.battle_screen;
-            this.picBossBattle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBossBattle.Location = new System.Drawing.Point(1170, 779);
-            this.picBossBattle.Margin = new System.Windows.Forms.Padding(4);
-            this.picBossBattle.Name = "picBossBattle";
-            this.picBossBattle.Size = new System.Drawing.Size(45, 39);
-            this.picBossBattle.TabIndex = 7;
-            this.picBossBattle.TabStop = false;
-            this.picBossBattle.Visible = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);           
             // 
             // picEnemy
             // 

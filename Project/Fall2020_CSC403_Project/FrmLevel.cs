@@ -169,9 +169,6 @@ namespace Fall2020_CSC403_Project {
         frmBattle = FrmBattle.GetInstance(enemy);
         frmBattle.Show();
 
-        if (enemy == bossKoolaid) {
-            frmBattle.SetupForBossBattle();
-        }
     }
     public void CheckResult(Enemy enemy){
         if (FrmBattle.Death){
