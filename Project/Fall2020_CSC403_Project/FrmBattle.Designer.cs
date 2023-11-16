@@ -1,4 +1,6 @@
-﻿namespace Fall2020_CSC403_Project {
+﻿using System.Windows.Forms;
+
+namespace Fall2020_CSC403_Project {
   partial class FrmBattle {
     /// <summary>
     /// Required designer variable.
@@ -24,6 +26,7 @@
     /// </summary>
     private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBattle));
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnEscape = new System.Windows.Forms.Button();
             this.btnHeal = new System.Windows.Forms.Button();
@@ -44,11 +47,13 @@
             this.advert = new System.Windows.Forms.Panel();
             this.AdExit = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.potion)).BeginInit();
             this.advert.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAttack
@@ -127,7 +132,7 @@
             this.lblEnemyHealthFull.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnemyHealthFull.Name = "lblEnemyHealthFull";
             this.lblEnemyHealthFull.Size = new System.Drawing.Size(340, 28);
-            this.lblEnemyHealthFull.TabIndex = 6;            
+            this.lblEnemyHealthFull.TabIndex = 6;
             // 
             // btnHelp
             // 
@@ -137,7 +142,15 @@
             this.btnHelp.TabIndex = 8;
             this.btnHelp.Text = "FAQ";
             this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);           
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // picBossBattle
+            // 
+            this.picBossBattle.Location = new System.Drawing.Point(0, 0);
+            this.picBossBattle.Name = "picBossBattle";
+            this.picBossBattle.Size = new System.Drawing.Size(10, 50);
+            this.picBossBattle.TabIndex = 0;
+            this.picBossBattle.TabStop = false;
             // 
             // picEnemy
             // 
@@ -247,6 +260,16 @@
             this.timer1.Interval = 800;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(1017, 782);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 25;
+            this.axWindowsMediaPlayer1.Visible = false;
+            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -254,6 +277,7 @@
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1233, 835);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.picBossBattle);
             this.Controls.Add(this.advert);
             this.Controls.Add(this.btnHelp);
@@ -283,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.potion)).EndInit();
             this.advert.ResumeLayout(false);
             this.advert.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -309,5 +334,6 @@
     private System.Windows.Forms.Panel advert;
     private System.Windows.Forms.TextBox AdExit;
     private System.Windows.Forms.Timer timer1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

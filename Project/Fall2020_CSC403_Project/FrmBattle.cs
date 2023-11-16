@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
 
+
 namespace Fall2020_CSC403_Project {
   public partial class FrmBattle : Form {
     public static FrmBattle instance = null;
@@ -19,10 +20,7 @@ namespace Fall2020_CSC403_Project {
     private int currentIndex = 0;
     private bool ad3start = false;// sets it to false
     string urlToOpen = "";
-
-
-
-        private FrmBattle() {
+    private FrmBattle() {
       InitializeComponent();
       player = Game.player;
     }
@@ -45,7 +43,18 @@ namespace Fall2020_CSC403_Project {
       // show experience
       UpdateExpBars();
       labelpotion.Text = "X " + HealingItem.havePotion.ToString();
+      advert.Visible = false;
     }
+        public void SetupForBossBattle()
+        {
+            string val = BackColor.Name.ToString();
+            if (val =="Red")//Check if the boss has been defeated
+            {
+                //Show possible games to download
+                AdVisible(val);
+            }
+
+        }
 
 
     public static FrmBattle GetInstance(Enemy enemy) {
@@ -79,22 +88,26 @@ namespace Fall2020_CSC403_Project {
 
 
         private void btnAttack_Click(object sender, EventArgs e) {
-            SoundPlayer attack_audio = new SoundPlayer(Resources.boom);
+            //SoundPlayer attack_audio = new SoundPlayer(Resources.boom);
+            axWindowsMediaPlayer1.URL = Application.StartupPath.Replace("\\bin\\Debug", "\\data\\boom.wav");
             bool checkweapon = Weapon.haveAWeapon;
             if (checkweapon)
             {
                 player.OnAttack(-8);
                 player.UpdateExp(1);
+                axWindowsMediaPlayer1.Ctlcontrols.play();
                 UpdateExpBars();
             }
             else
             {
                 player.OnAttack(-4);
                 player.UpdateExp(1);
+                axWindowsMediaPlayer1.Ctlcontrols.play();
                 UpdateExpBars();
             }
             if (enemy.Health > 0) {
-                attack_audio.Play();
+                //attack_audio.Play();
+                axWindowsMediaPlayer1.Ctlcontrols.play();
                 enemy.OnAttack(-2);
             }
 
