@@ -35,7 +35,7 @@ namespace Fall2020_CSC403_Project
             frmlevel2 = FrmLevel2.GetInstance();
             frmlevel2.Show();
             Close();
-
+            FrmLevel.frmlevel.Close();
         }
 
     private void textBox1_TextChanged(object sender, EventArgs e)

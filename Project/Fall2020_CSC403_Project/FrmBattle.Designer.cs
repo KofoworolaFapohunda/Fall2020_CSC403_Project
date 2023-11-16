@@ -168,7 +168,15 @@ namespace Fall2020_CSC403_Project {
             // picPlayer
             // 
             this.picPlayer.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.mc1;
+            if (FrmSelectCharacter.character == "yuji") {
+                this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.mc1; 
+            }
+            if (FrmSelectCharacter.character == "megumi") {
+                this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.mc2; 
+            }
+            if (FrmSelectCharacter.character == "nobara") {
+                this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.mc3; 
+            }
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picPlayer.Location = new System.Drawing.Point(105, 136);
@@ -334,6 +342,6 @@ namespace Fall2020_CSC403_Project {
     private System.Windows.Forms.Panel advert;
     private System.Windows.Forms.TextBox AdExit;
     private System.Windows.Forms.Timer timer1;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+    private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

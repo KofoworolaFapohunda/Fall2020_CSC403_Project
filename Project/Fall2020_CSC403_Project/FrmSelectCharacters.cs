@@ -19,6 +19,7 @@ namespace Fall2020_CSC403_Project
         private Player yuji;
         private Player megumi;
         private Player nobara;
+        public static string character;
 
         
         public FrmSelectCharacter()
@@ -39,7 +40,8 @@ namespace Fall2020_CSC403_Project
             yuji.Img = picYuji.Image;
             frmlevel = FrmLevel.GetInstance(yuji);
             frmlevel.Show();
-
+            character = "yuji";
+            Close();
         }
 
 
@@ -49,6 +51,8 @@ namespace Fall2020_CSC403_Project
             megumi.Img = picMegumi.Image;
             frmlevel = FrmLevel.GetInstance(megumi);
             frmlevel.Show();
+            character = "megumi";
+            Close();
         }
 
         private void picNobara_Click(object sender, EventArgs e)
@@ -57,6 +61,8 @@ namespace Fall2020_CSC403_Project
             nobara.Img = picNobara.Image;
             frmlevel = FrmLevel.GetInstance(nobara);
             frmlevel.Show();
+            character = "nobara";
+            Close();
         }
         private Vector2 CreatePosition(PictureBox pic)
         {

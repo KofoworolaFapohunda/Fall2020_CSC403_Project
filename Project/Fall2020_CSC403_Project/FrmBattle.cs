@@ -95,18 +95,15 @@ namespace Fall2020_CSC403_Project {
             {
                 player.OnAttack(-8);
                 player.UpdateExp(1);
-                axWindowsMediaPlayer1.Ctlcontrols.play();
                 UpdateExpBars();
             }
             else
             {
                 player.OnAttack(-4);
                 player.UpdateExp(1);
-                axWindowsMediaPlayer1.Ctlcontrols.play();
                 UpdateExpBars();
             }
             if (enemy.Health > 0) {
-                //attack_audio.Play();
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 enemy.OnAttack(-2);
             }

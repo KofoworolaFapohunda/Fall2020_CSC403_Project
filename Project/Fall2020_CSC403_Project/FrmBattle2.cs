@@ -50,18 +50,17 @@ namespace Fall2020_CSC403_Project
             // show experience
             UpdateExpBars();
             labelpotion.Text = "X " + HealingItem.havePotion.ToString();
+            advert.Visible = false;
         }
 
         public void SetupForBossBattle()
         {
-            picBossBattle.Location = Point.Empty;
-            picBossBattle.Size = ClientSize;
-            picBossBattle.Visible = true;
-
-            SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
-            simpleSound.Play();
-
-            tmrFinalBattle.Enabled = true;
+            string val = BackColor.Name.ToString();
+            if (val == "Red")//Check if the boss has been defeated
+            {
+                //Show possible games to download
+                AdVisible(val);
+            }
         }
 
         public static FrmBattle2 GetInstance(Enemy enemy)
@@ -100,7 +99,8 @@ namespace Fall2020_CSC403_Project
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            SoundPlayer attack_audio = new SoundPlayer(Resources.boom);
+            //SoundPlayer attack_audio = new SoundPlayer(Resources.boom);
+            axWindowsMediaPlayer1.URL = Application.StartupPath.Replace("\\bin\\Debug", "\\data\\boom.wav");
             bool checkweapon = Weapon.haveAWeapon;
             if (checkweapon)
             {
@@ -116,7 +116,7 @@ namespace Fall2020_CSC403_Project
             }
             if (enemy.Health > 0)
             {
-                attack_audio.Play();
+                axWindowsMediaPlayer1.Ctlcontrols.play();
                 enemy.OnAttack(-2);
             }
 
@@ -175,21 +175,6 @@ namespace Fall2020_CSC403_Project
             player2.AlterHealth(amount);
         }
 
-        private void tmrFinalBattle_Tick(object sender, EventArgs e)
-        {
-            picBossBattle.Visible = false;
-            tmrFinalBattle.Enabled = false;
-            BgdTrack.PlayBackgroundTrack();//Calling the background music to start again
-            /// advert functionality
-            ///////////////////////////////start			
-            string val = BackColor.Name.ToString();
-            if (val == "Red")
-            {
-                //Show possible games to download
-                //Check if tthe boss has been defeated 
-                AdVisible(val);
-            }
-        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (currentIndex < texts.Count)

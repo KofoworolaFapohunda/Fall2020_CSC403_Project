@@ -97,6 +97,9 @@
     <Compile Include="YouWin.Designer.cs">
       <DependentUpon>YouWin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmBattle2.resx">
+      <DependentUpon>FrmBattle2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLevel2.resx">
       <DependentUpon>FrmLevel2.cs</DependentUpon>
     </EmbeddedResource>
