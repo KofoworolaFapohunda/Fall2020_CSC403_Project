@@ -18,6 +18,14 @@ namespace Fall2020_CSC403_Project {
     //Initializing advert Panel and declaring variables
     private List<string> texts = new List<string> { "5", "4", "3", "2", "EXIT" };
     private int currentIndex = 0;
+    public static int inherithealth;
+    public static int inheritmaxhealth;
+    public static int inheritexperience = 0;
+    public static int inheritmaxexperience;
+    public static int inheritlevel;
+    public static int getattack = 0;
+    public static int getheal = 0;
+    public static int getexperience = 0;
     private bool ad3start = false;// sets it to false
     string urlToOpen = "";
     private FrmBattle() {
@@ -95,17 +103,20 @@ namespace Fall2020_CSC403_Project {
             {
                 player.OnAttack(-8);
                 player.UpdateExp(1);
+                getexperience += 1;
                 UpdateExpBars();
             }
             else
             {
                 player.OnAttack(-4);
                 player.UpdateExp(1);
+                getexperience += 1;
                 UpdateExpBars();
             }
             if (enemy.Health > 0) {
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 enemy.OnAttack(-2);
+                getattack += -2;
             }
 
             UpdateHealthBars();
@@ -114,6 +125,7 @@ namespace Fall2020_CSC403_Project {
                 instance = null;
                 FrmLevel.KillEnemy++;
                 player.UpdateExp(10);
+                getexperience += 10;
                 UpdateExpBars();
                 Death = true;
                 Close();
@@ -138,6 +150,7 @@ namespace Fall2020_CSC403_Project {
             if (HealingItem.havePotion > 0) { 
                 player.OnHeal(5);
                 UpdateHealthBars();
+                getheal += 5;
                 HealingItem.havePotion --;
                 labelpotion.Text = "X " + HealingItem.havePotion.ToString();
             }
@@ -221,10 +234,11 @@ namespace Fall2020_CSC403_Project {
         private void FrmBattle_FormClosing(object sender, FormClosingEventArgs e) {
             FrmLevel.frmlevel.CheckResult(enemy);
             FrmLevel.frmlevel.UpdatePlayerStatus(player.Health, player.MaxHealth, player.Experience, player.maxExp, player.Level);
-        }
-
-        private void potion_Click(object sender, EventArgs e){
-
+            inherithealth = player.Health;
+            inheritmaxhealth = player.MaxHealth;
+            inheritexperience = player.Experience;
+            inheritmaxexperience = player.maxExp;
+            inheritlevel = player.Level;
         }
   }
 }

@@ -253,7 +253,6 @@
             this.potion.Size = new System.Drawing.Size(46, 60);
             this.potion.TabIndex = 11;
             this.potion.TabStop = false;
-            this.potion.Click += new System.EventHandler(this.potion_Click);
             // 
             // picBossBattle
             // 

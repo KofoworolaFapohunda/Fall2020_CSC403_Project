@@ -28,7 +28,7 @@ namespace Fall2020_CSC403_Project
         private FrmBattle2()
         {
             InitializeComponent();
-            player2 = Game.player;
+            player2 = Game.player;           
         }
 
         public void Setup()
@@ -51,6 +51,12 @@ namespace Fall2020_CSC403_Project
             UpdateExpBars();
             labelpotion.Text = "X " + HealingItem.havePotion.ToString();
             advert.Visible = false;
+            player2.UpdateExp(FrmBattle.getexperience);
+            enemy.OnAttack(FrmBattle.getattack);
+            player2.OnHeal(FrmBattle.getheal);
+            FrmBattle.getattack = 0;
+            FrmBattle.getexperience = 0;
+            FrmBattle.getheal = 0;
         }
 
         public void SetupForBossBattle()
@@ -248,11 +254,11 @@ namespace Fall2020_CSC403_Project
         {
             FrmLevel2.frmlevel2.CheckResult(enemy);
             FrmLevel2.frmlevel2.UpdatePlayerStatus(player2.Health, player2.MaxHealth, player2.Experience, player2.maxExp, player2.Level);
-        }
-
-        private void potion_Click(object sender, EventArgs e)
-        {
-
+            FrmBattle.inherithealth = player2.Health;
+            FrmBattle.inheritmaxhealth = player2.MaxHealth;
+            FrmBattle.inheritexperience = player2.Experience;
+            FrmBattle.inheritmaxexperience = player2.maxExp;
+            FrmBattle.inheritlevel = player2.Level;
         }
     }
 }

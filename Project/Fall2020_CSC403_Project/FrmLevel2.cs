@@ -66,7 +66,7 @@ namespace Fall2020_CSC403_Project
 
             Game.player = player2;
             timeBegin = DateTime.Now;
-            UpdatePlayerStatus(30, 30, 0, 20, 0);
+            UpdatePlayerStatus(FrmBattle.inherithealth, FrmBattle.inheritmaxhealth, FrmBattle.inheritexperience, FrmBattle.inheritmaxexperience, FrmBattle.inheritlevel);
         }
 
         private Vector2 CreatePosition(PictureBox pic)
