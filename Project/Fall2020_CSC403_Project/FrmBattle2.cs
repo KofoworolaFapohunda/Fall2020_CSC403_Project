@@ -14,7 +14,7 @@ namespace Fall2020_CSC403_Project
         private Enemy enemy;
         private Player player2;
         private GameOver gameover;
-        private YouWin youwin;
+        private YouWinf youwin;
         public static bool Death = false;
         //Initializing advert Panel and declaring variables
         private static int characterbattle;
@@ -140,8 +140,8 @@ namespace Fall2020_CSC403_Project
                 Close();
                 if (FrmLevel2.KillEnemy == FrmLevel2.NumOfEnemy)
                 {
-                    gameover = GameOver.GetInstance();
-                gameover.Show();
+                    youwin = YouWinf.GetInstance();
+                    youwin.Show();
                 }
             }
             if (player2.Health <= 0)
