@@ -57,6 +57,8 @@ namespace Fall2020_CSC403_Project
             FrmBattle.getattack = 0;
             FrmBattle.getexperience = 0;
             FrmBattle.getheal = 0;
+            UpdateHealthBars() ;
+            UpdateExpBars() ;
         }
 
         public void SetupForBossBattle()
